@@ -6,6 +6,7 @@ import TestSignAndSendransaction from './components/SignAndSendTransaction';
 import SignMessage from './components/SignMessage';
 import SignInTester from './components/Signin';
 import TestSignTransaction from './components/SignTransaction';
+import TestSignAllTransactions from './components/SignAllTransaction';
 
 const Landing = () => {
   const { account, wallet } = useWallet();
@@ -35,6 +36,7 @@ const Landing = () => {
         <SignMessage/>
         <TestSignTransaction/>
         <TestSignAndSendransaction/>
+        <TestSignAllTransactions/>
       </div>
     )
   );
