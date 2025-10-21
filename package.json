@@ -11,6 +11,8 @@
   "dependencies": {
     "@gillsdk/react": "file:../turbine-gill/packages/react",
     "@solana-program/memo": "^0.8.0",
+    "@solana/wallet-standard-features": "^1.3.0",
+    "@solana/wallet-standard-util": "^1.1.2",
     "@tanstack/react-query": "^5.90.5",
     "gill": "file:../turbine-gill/packages/gill",
     "next": "15.5.6",

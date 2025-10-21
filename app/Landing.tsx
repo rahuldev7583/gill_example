@@ -2,6 +2,10 @@
 
 import { useBalance, useSolanaClient, useWallet } from '@gillsdk/react';
 import React from 'react';
+import TestSignAndSendransaction from './components/SignAndSendTransaction';
+import SignMessage from './components/SignMessage';
+import SignInTester from './components/Signin';
+import TestSignTransaction from './components/SignTransaction';
 
 const Landing = () => {
   const { account, wallet } = useWallet();
@@ -27,7 +31,10 @@ const Landing = () => {
             {balance ? `${(Number(balance) / 1e9).toFixed(4)} SOL` : '0 SOL'}
           </span>
         </h2>
-       
+        <SignInTester/>
+        <SignMessage/>
+        <TestSignTransaction/>
+        <TestSignAndSendransaction/>
       </div>
     )
   );

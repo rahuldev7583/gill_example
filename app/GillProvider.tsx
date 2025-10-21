@@ -15,7 +15,7 @@ const queryClient = new QueryClient({
 
 const solanaClient = createSolanaClient({
  urlOrMoniker: process.env.NEXT_PUBLIC_RPC_URL || 'devnet',
- cluster: "devnet"
+ cluster: "solana:devnet"
 });
 
 export function GillProvider({ children }: { children: React.ReactNode }) {
