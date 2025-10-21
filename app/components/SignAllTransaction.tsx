@@ -40,8 +40,7 @@ export default function TestSignAllTransactions() {
       setError(null);
       setTxSigs([]);
 
-      const signedTxs: Uint8Array[] = [];
-
+      const txs = [];
       for (let i = 0; i < 3; i++) {
         const { value: latestBlockhash } = await rpc.getLatestBlockhash().send();
 
@@ -54,11 +53,11 @@ export default function TestSignAllTransactions() {
           })
         );
 
-        const [signedTx] = await signAllTransaction([tx]);
-        signedTxs.push(signedTx);
+        txs.push(tx);
       }
 
-      const base64Txs = signedTxs.map(toBase64EncodedWireTransaction);
+      const signedTxBytesArray = await signAllTransaction(txs);
+      const base64Txs = signedTxBytesArray.map(toBase64EncodedWireTransaction);
 
       const sendResults = await Promise.allSettled(
         base64Txs.map((tx) =>
